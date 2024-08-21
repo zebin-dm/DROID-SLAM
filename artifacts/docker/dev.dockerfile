@@ -16,8 +16,8 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     /bin/bash ~/miniconda.sh -b -p /opt/conda
 # Put conda in path so we can use conda activate
 ENV PATH=$CONDA_DIR/bin:$PATH
-ARG CONA_ENV=py311
-RUN conda create -n $CONA_ENV python=3.11 -y
+ARG CONA_ENV=py39
+RUN conda create -n $CONA_ENV python=3.9 -y
 RUN echo "source activate $CONA_ENV" >> ~/.bashrc
 ENV PATH=$CONDA_DIR/envs/$CONA_ENV/bin:$PATH
 

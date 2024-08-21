@@ -4,7 +4,7 @@ set -exo pipefail
 
 eval "$(conda shell.bash hook)"
 
-conda activate py311
+conda activate py39
 
 pip install --no-cache-dir \
     torch==1.11.0+cu113 \
@@ -12,7 +12,7 @@ pip install --no-cache-dir \
     torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 
 pip install --no-cache-dir \
-    pytorch-scatter -f https://data.pyg.org/whl/torch-1.11.0+cu113.html
+    torch_scatter -f https://data.pyg.org/whl/torch-1.11.0+cu113.html
 
 pip install --no-cache-dir \
     omegaconf \
@@ -20,9 +20,9 @@ pip install --no-cache-dir \
     open3d \
     tensorboard \
     scipy \
-    opencv \
+    opencv-python \
     tqdm \
-    suitesparse \
+    suitesparse-graphblas \
     matplotlib \
     pyyaml \
     gdown
